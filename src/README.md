@@ -9,16 +9,70 @@ A super simple FastAPI application that allows students to view and sign up for 
 
 ## Getting Started
 
-1. Install the dependencies:
+### Setting Up a Virtual Environment (Recommended)
 
-   ```
-   pip install fastapi uvicorn
-   ```
+It's recommended to use a Python virtual environment to manage dependencies and avoid conflicts with system packages.
+
+#### On Windows:
+
+```bash
+# Navigate to the project directory
+cd /path/to/skills-getting-started-with-github-copilot
+
+# Create a virtual environment
+python -m venv venv
+
+# Activate the virtual environment
+venv\Scripts\activate
+```
+
+#### On macOS/Linux:
+
+```bash
+# Navigate to the project directory
+cd /path/to/skills-getting-started-with-github-copilot
+
+# Create a virtual environment
+python3 -m venv venv
+
+# Activate the virtual environment
+source venv/bin/activate
+```
+
+#### Deactivating the Virtual Environment
+
+When you're done working, you can deactivate the virtual environment:
+
+```bash
+deactivate
+```
+
+### Installing Dependencies
+
+Once the virtual environment is activated, install the required dependencies:
+
+```bash
+# Install from requirements.txt
+pip install -r requirements.txt
+
+# Or install manually
+pip install fastapi uvicorn
+```
+
+### Running the Application
+
+1. Make sure your virtual environment is activated (you should see `(venv)` in your terminal prompt)
 
 2. Run the application:
 
+   ```bash
+   python src/app.py
    ```
-   python app.py
+
+   Or using uvicorn directly:
+
+   ```bash
+   uvicorn src.app:app --reload
    ```
 
 3. Open your browser and go to:

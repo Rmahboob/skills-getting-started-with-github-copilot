@@ -19,6 +19,17 @@ In this exercise, you will:
 1. Learn different interaction options to develop with GitHub Copilot.
 1. Use Copilot to summarize and review your pull request.
 
+### Local Development Setup
+
+If you prefer to run the project locally instead of using Codespaces, follow these steps:
+
+1. **Clone the repository**
+2. **Set up a Python virtual environment** - See detailed instructions in [`src/README.md`](src/README.md)
+3. **Install dependencies** from `requirements.txt`
+4. **Run the FastAPI application**
+
+For complete setup instructions including virtual environment configuration, refer to the [Getting Started guide](src/README.md) in the `src` directory.
+
 ### How to start this exercise
 
 Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
