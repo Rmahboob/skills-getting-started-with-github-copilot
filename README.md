@@ -19,6 +19,77 @@ In this exercise, you will:
 1. Learn different interaction options to develop with GitHub Copilot.
 1. Use Copilot to summarize and review your pull request.
 
+## 🚀 New: GenAI System Engineering Support
+
+This repository now includes comprehensive Python configuration and GenAI capabilities for System Engineering use cases:
+
+### Features
+
+- **Requirements Analysis**: AI-powered analysis of system requirements for clarity, completeness, and testability
+- **Design Generation**: Generate system architectures and designs from specifications
+- **Risk Assessment**: Identify and evaluate potential system risks
+- **Test Case Generation**: Automatically generate comprehensive test cases
+- **System Optimization**: Get AI-powered suggestions for system performance improvements
+
+### Quick Start
+
+1. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Configure GenAI** (Optional - for AI features):
+   ```bash
+   cp .env.example .env
+   # Edit .env and add your OPENAI_API_KEY
+   ```
+
+3. **Run the Application**:
+   ```bash
+   uvicorn src.app:app --reload --port 8000
+   ```
+
+4. **Access the API**:
+   - Main API: http://localhost:8000
+   - API Documentation: http://localhost:8000/docs
+   - GenAI Status: http://localhost:8000/genai/status
+
+### Documentation
+
+- **[GENAI_SETUP.md](GENAI_SETUP.md)**: Comprehensive setup and usage guide
+- **[examples/](examples/)**: Example scripts and demos
+- **[src/genai_system_engineering.py](src/genai_system_engineering.py)**: GenAI module source
+
+### Python Configuration
+
+The project includes modern Python development setup:
+
+- **pyproject.toml**: Modern Python project configuration
+- **Code formatting**: Black (configured for 100 char line length)
+- **Linting**: Ruff with comprehensive rules
+- **Type checking**: MyPy support
+- **Testing**: Pytest with coverage
+- **VS Code**: Pre-configured settings for optimal Python development
+
+### Example Usage
+
+```python
+from src.genai_system_engineering import create_genai_engineer
+
+# Initialize the GenAI engineer
+engineer = create_genai_engineer()
+
+# Analyze requirements
+result = engineer.analyze_requirements("""
+    System Requirements:
+    1. The system shall support 10,000 concurrent users
+    2. Response time shall be under 2 seconds
+""")
+print(result)
+```
+
+See [GENAI_SETUP.md](GENAI_SETUP.md) for complete documentation and examples.
+
 ### How to start this exercise
 
 Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
