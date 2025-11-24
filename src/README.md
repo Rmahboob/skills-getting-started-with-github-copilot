@@ -63,17 +63,13 @@ pip install fastapi uvicorn
 
 1. Make sure your virtual environment is activated (you should see `(venv)` in your terminal prompt)
 
-2. Run the application:
-
-   ```bash
-   python src/app.py
-   ```
-
-   Or using uvicorn directly:
+2. Run the application using uvicorn:
 
    ```bash
    uvicorn src.app:app --reload
    ```
+
+   The `--reload` flag enables auto-reloading when you make code changes.
 
 3. Open your browser and go to:
    - API documentation: http://localhost:8000/docs
