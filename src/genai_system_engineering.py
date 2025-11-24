@@ -17,12 +17,6 @@ try:
 except ImportError:
     OPENAI_AVAILABLE = False
 
-try:
-    import pandas as pd
-    PANDAS_AVAILABLE = True
-except ImportError:
-    PANDAS_AVAILABLE = False
-
 
 class SystemEngineeringTask(str, Enum):
     """Types of system engineering tasks"""
@@ -52,6 +46,7 @@ class GenAISystemEngineer:
         self.api_key = api_key or os.getenv("OPENAI_API_KEY")
         self.model = os.getenv("OPENAI_MODEL", "gpt-4")
         self.temperature = float(os.getenv("OPENAI_TEMPERATURE", "0.7"))
+        self.max_tokens = int(os.getenv("GENAI_MAX_TOKENS", "2000"))
         
         if OPENAI_AVAILABLE and self.api_key:
             self.client = OpenAI(api_key=self.api_key)
@@ -103,7 +98,7 @@ class GenAISystemEngineer:
                     {"role": "user", "content": prompt}
                 ],
                 temperature=self.temperature,
-                max_tokens=int(os.getenv("GENAI_MAX_TOKENS", "2000"))
+                max_tokens=self.max_tokens
             )
             
             result = response.choices[0].message.content
@@ -169,7 +164,7 @@ class GenAISystemEngineer:
                     {"role": "user", "content": prompt}
                 ],
                 temperature=self.temperature,
-                max_tokens=int(os.getenv("GENAI_MAX_TOKENS", "2000"))
+                max_tokens=self.max_tokens
             )
             
             return {
@@ -223,7 +218,7 @@ class GenAISystemEngineer:
                     {"role": "user", "content": prompt}
                 ],
                 temperature=self.temperature,
-                max_tokens=int(os.getenv("GENAI_MAX_TOKENS", "2000"))
+                max_tokens=self.max_tokens
             )
             
             return {
@@ -278,7 +273,7 @@ class GenAISystemEngineer:
                     {"role": "user", "content": prompt}
                 ],
                 temperature=self.temperature,
-                max_tokens=int(os.getenv("GENAI_MAX_TOKENS", "2000"))
+                max_tokens=self.max_tokens
             )
             
             return {
@@ -334,7 +329,7 @@ class GenAISystemEngineer:
                     {"role": "user", "content": prompt}
                 ],
                 temperature=self.temperature,
-                max_tokens=int(os.getenv("GENAI_MAX_TOKENS", "2000"))
+                max_tokens=self.max_tokens
             )
             
             return {

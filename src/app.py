@@ -21,7 +21,7 @@ load_dotenv()
 
 # Import GenAI module (gracefully handle if dependencies are missing)
 try:
-    from src.genai_system_engineering import create_genai_engineer, SystemEngineeringTask
+    from src.genai_system_engineering import create_genai_engineer
     GENAI_AVAILABLE = True
 except ImportError:
     GENAI_AVAILABLE = False
